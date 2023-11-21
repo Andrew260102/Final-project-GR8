@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&family=Source+Sans+Pro&display=swap');
+
+
+.text-h1 {
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: 700 !important;
+    text-align: center;
+    font-size: 3.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 1.1;
+    color: white;
+}
+
+
+.banner {
+    margin-top: -10px;
+    text-align: center;
+    background-color: rgb(92,184,92);
+    padding: 10px;
+}
+
+.container{
+    margin-top: 20px;
+}
+
+.text-font{
+    font-family: "Titillium Web", sans-serif;
+
+}
+
+.p-font{
+    color: white;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 24px;
+}

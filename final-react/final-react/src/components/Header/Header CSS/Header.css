@@ -1,0 +1,37 @@
+.flex{
+    display: flex;
+}
+
+.Font-color{
+    font-family: "Titillium Web", sans-serif;
+    font-size: 1.5rem !important;
+    color: #5CB85C !important;
+    font-weight: bold;
+}
+
+.Sign-in, .Sign-up, .Home {
+    margin-left: 20px;
+}
+
+
+.text-decoration {
+    text-decoration: none;
+    color: gray; 
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .text-decoration.active {
+    color: black; 
+  }
+  
+  .Sign-in.active,
+  .Sign-up.active {
+    color: black; 
+  }
+  
+  .padding-header{
+    padding: 0.5rem 1rem;
+    /* background-color: aqua; */
+  }
+
