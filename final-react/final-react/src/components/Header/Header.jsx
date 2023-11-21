@@ -12,7 +12,7 @@ const Header = () => {
 
     return (
         <nav className='padding-header'>
-            <Row fluid>
+            <Row fluid="true">
                 <Col xs={2}></Col>
                 <Col xs={2} className="Font-color">
                     conduit

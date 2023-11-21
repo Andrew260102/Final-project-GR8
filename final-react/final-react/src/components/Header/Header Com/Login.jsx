@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const nav = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-    const handleEmailChange = (event) => {
-        setEmail(event.target.value);
-    };
-
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
-    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -28,14 +21,19 @@ const Login = () => {
                     password
                 }
             });
-
             const { user, errors } = response.data;
-           
             if (user) {
-                alert("User logged in!");
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Login successful",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 nav("/");
                 sessionStorage.setItem("currEmail", user.email);
-                sessionStorage.setItem("currPassword", user.email);
+                sessionStorage.setItem("currPassword", user.password);
+                sessionStorage.setItem("currToken", user.token);
             } else {
                 alert("Login failed");
                 if (errors) {
@@ -67,7 +65,7 @@ const Login = () => {
                                 className="form-control"
                                 placeholder='Email'
                                 value={email}
-                                onChange={handleEmailChange}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
                         <div className="form-group text-left">
@@ -77,7 +75,7 @@ const Login = () => {
                                 className="form-control"
                                 placeholder='Password'
                                 value={password}
-                                onChange={handlePasswordChange}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
                         <button

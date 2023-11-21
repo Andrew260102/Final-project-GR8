@@ -5,7 +5,7 @@ const Footer = () => {
         <div className='fixed-bottom'>
             <div className='abc'>
                 <a href="https://github.com/gothinkster/angularjs-realworld-example-app" target='_blank'>
-                    <i class="bi bi-github margin-right"></i>
+                    <i className="bi bi-github margin-right"></i>
                     Fork on GitHub
                 </a>
             </div>
