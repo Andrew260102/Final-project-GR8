@@ -17,6 +17,7 @@
     text-align: center;
     background-color: rgb(92,184,92);
     padding: 10px;
+    margin-bottom: 30px;
 }
 
 .container{
@@ -32,4 +33,38 @@
     color: white;
     font-family: "Source Sans Pro", sans-serif;
     font-size: 24px;
+}
+
+.edit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.edit input{
+    width: 919.99px;
+    border-radius: 0.3rem;
+}
+
+.edit input:nth-child(1){
+    height: 50.6px;
+}
+
+.edit .i2{
+    height: 37.6px;
+}
+
+.edit textarea {
+    width: 919.99px;
+    height: 177.6px;
+    border-radius: 0.3rem;
+}
+
+.edit .pArticle{
+    background-color: #5CB85C;
+    width: 169.79px;
+    height: 50.6px;
+    border-radius: 0.3rem;
+    margin-left: 750px;
 }

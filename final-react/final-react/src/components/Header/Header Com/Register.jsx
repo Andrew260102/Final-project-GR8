@@ -16,7 +16,7 @@ const Register = () => {
             return;
         }
         try {
-            // const checkResponse = await axios.get(`https://api.realworld.io/api/users?email=${email}&username=${username}`);
+            // const checkResponse = await axios.get("https://api.realworld.io/api/users?email=" + email + "&username=" + username);
             // const existingUser = checkResponse.data.users; 
 
             // if (existingUser && existingUser.length > 0) {
@@ -33,13 +33,15 @@ const Register = () => {
             const { user, errors } = registerResponse.data;
             if (user) {
                 Swal.fire({
-                    position: "top-end",
+                    position: "top-mid",
                     icon: "success",
                     title: "Registration successful",
                     showConfirmButton: false,
                     timer: 1500
                 });
-                navigate("/login");
+                sessionStorage.setItem("currUsername", user.username);
+                navigate("/login");  
+                window.location.reload();
             } else {
                 alert("Registration failed");
                 if (errors) {
@@ -56,9 +58,8 @@ const Register = () => {
         setPassword("");
     };
 
-
     return (
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center ">
             <div className="card" style={{ width: "600px" }}>
                 <div className="card-header text-center">
                     <h2>Sign up</h2>

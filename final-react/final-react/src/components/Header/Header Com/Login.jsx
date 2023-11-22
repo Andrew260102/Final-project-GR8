@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 const Login = () => {
     const nav = useNavigate();
@@ -23,22 +23,25 @@ const Login = () => {
             });
             const { user, errors } = response.data;
             if (user) {
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Login successful",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
+                // Swal.fire({
+                //     position: "top-mid",
+                //     icon: "success",
+                //     title: "Login successful",
+                //     showConfirmButton: false,
+                //     timer: 1500
+                // });
                 nav("/");
                 sessionStorage.setItem("currEmail", user.email);
                 sessionStorage.setItem("currPassword", user.password);
                 sessionStorage.setItem("currToken", user.token);
+                sessionStorage.setItem("currUsername", user.username);
+                window.location.reload();
             } else {
                 alert("Login failed");
                 if (errors) {
                     console.error("Login errors:", errors);
                 }
+                
             }
         } catch (error) {
             console.error("Error during login:", error);
@@ -47,8 +50,7 @@ const Login = () => {
         setEmail("");
         setPassword("");
     };
-
-
+    
     return (
         <div className="d-flex justify-content-center">
             <div className="card" style={{ width: "600px" }}>
