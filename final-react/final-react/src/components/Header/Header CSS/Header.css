@@ -7,6 +7,7 @@
     font-size: 1.5rem !important;
     color: #5CB85C !important;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .Sign-in, .Sign-up, .Home {
@@ -32,6 +33,5 @@
   
   .padding-header{
     padding: 0.5rem 1rem;
-    /* background-color: aqua; */
   }
 
