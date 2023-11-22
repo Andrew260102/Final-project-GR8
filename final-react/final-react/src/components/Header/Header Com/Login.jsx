@@ -36,6 +36,8 @@ const Login = () => {
                 localStorage.setItem("currPassword", user.password);
                 localStorage.setItem("currToken", user.token);
                 localStorage.setItem("currUsername", user.username);
+                localStorage.setItem("currImage", user.image);
+                localStorage.setItem("currBio", user.bio);
                 window.location.reload();
             } else {
                 alert("Login failed");

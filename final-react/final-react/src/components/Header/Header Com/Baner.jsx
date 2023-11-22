@@ -14,3 +14,6 @@ const Baner = () => {
 };
 
 export default Baner;
+
+
+
