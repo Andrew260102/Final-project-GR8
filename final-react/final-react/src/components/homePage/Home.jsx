@@ -3,6 +3,8 @@ import axios from 'axios';  // Import Axios
 import Baner from '../Header/Header Com/Baner';
 import { Row, Container, Col } from 'react-bootstrap';
 import "../homePage/homePage.css/Home.css";
+import { NavLink } from 'react-router-dom';
+
 
 const Home = () => {
     const [articles, setArticles] = useState([]);
@@ -27,7 +29,7 @@ const Home = () => {
         };
 
         fetchArticles();
-    }, []); 
+    }, []);
 
     // Get current articles
     const indexOfLastArticle = currentPage * articlesPerPage;
@@ -59,15 +61,51 @@ const Home = () => {
                                 Global Feed
                             </div>
                         </div>
-                        
+
                         {/* Display content based on activeFeed */}
                         {activeFeed === 'your' && isLoggedIn && <div>Your Feed Content</div>}
                         {activeFeed === 'global' && (
                             <div>
                                 {currentArticles.map(article => (
                                     <div key={article.slug}>
-                                        <h2>{article.title}</h2>
-                                        <p>{article.description}</p>
+                                        <Row className='article-preview'>
+                                            <Col xs="6" className='flex'>
+                                                <a href={'/@' + article.author.username} className='size-img'>
+                                                    <img src={article.author.image} alt="" />
+                                                </a>
+                                                <div className='user-detail'>
+                                                    <a href={'/@' + article.author.username} className='size-img'>
+                                                        {article.author.username}
+                                                    </a>
+                                                    <p>{new Date(article.createdAt).toLocaleDateString("en-US", {
+                                                        year: 'numeric',
+                                                        month: 'long',
+                                                        day: 'numeric'
+                                                    })}</p>
+                                                </div>
+                                            </Col>
+                                            <Col xs="6">
+                                                <div>
+                                                    <button className="btn btn-sm btn-outline-primary buright flex">
+                                                        <i className="bi bi-heart-fill"></i>{article.favoritesCount}
+                                                    </button>
+                                                </div>
+                                            </Col>
+
+                                        </Row>
+                                        <h1 className='font-title' >{article.title}</h1>
+                                        <p className='font-desc'>{article.description}</p>
+                                        <div>
+                                            <span>Read more...</span>
+                                            <ul className="tag-list">
+                                                {article.tagList.map((tag) => (
+                                                    <li key={tag} className="tag-default tag-pill tag-outline">
+                                                        {tag}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
                                     </div>
                                 ))}
                                 {/* Pagination */}

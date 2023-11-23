@@ -28,3 +28,109 @@
 .global.active {
   color: #97d297;
 }
+
+
+
+
+.size-img img {
+  height: 32px;
+  width: 32px;
+  border-radius: 30px;
+  /* vertical-align: middle; */
+  margin-right: 10px;
+}
+
+.size-img{
+  text-decoration: none;
+  color: #5CB85C;
+}
+
+.size-img:hover{
+  text-decoration: underline;
+}
+
+.user-detail{
+  color: #BBBBBB;
+  font-size: 12.8px;
+}
+
+
+.buright{
+  float: right;
+  /* margin-left: 700px; */
+}
+.bi-heart-fill {
+  margin-right: 5px;
+}
+
+
+.btn-outline-primary {
+  color: #5CB85C!important;
+  background-image: none;
+  background-color: transparent;
+  border-color: #5CB85C!important;
+}
+
+.btn-outline-primary:hover {
+  color: white!important;
+  background-color: #5CB85C!important;
+}
+
+.font-title {
+  font-size: 24px;
+}
+
+.article-preview {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 0; 
+}
+
+.user-detail {
+  margin-left: 10px; /* Add some margin to the user details */
+}
+
+
+
+
+.tag-default {
+  color: #fff !important;
+  font-size: 0.8rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  white-space: nowrap;
+  margin-right: 3px;
+  margin-bottom: 0.2rem;
+  display: inline-block;
+}
+
+.tag-default {
+  background-color: #818a91;
+}
+
+.tag-pill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 10rem;
+}
+
+ul.tag-list {
+  padding-left: 0px !important;
+  display: inline-block;
+  list-style: none !important;
+}
+
+.tag-default.tag-outline {
+  border: 1px solid #ddd;
+  color: #542525 !important;
+  background: none !important;
+}
+
+a:focus, a:hover {
+  color: #3d8b3d;
+  text-decoration: underline;
+}
+
+
+.tag-list {
+  margin-left: 640px;
+}

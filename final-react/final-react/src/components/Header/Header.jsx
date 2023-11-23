@@ -70,7 +70,7 @@ const Header = () => {
                             className={`text-decoration Sign-in ${activeLink === 'Signin' ? 'active' : ''}`}
                             onClick={() => handleNavLinkClick('')}
                         >
-                            <i class="bi bi-pencil-square"></i>
+                            <i className="bi bi-pencil-square"></i>
                             &nbsp;New Article
 
                         </NavLink>
@@ -79,7 +79,7 @@ const Header = () => {
                             className={`text-decoration Sign-up ${activeLink === 'Signup' ? 'active' : ''}`}
                             onClick={() => handleNavLinkClick('')}
                         >
-                            <i class="bi bi-gear-wide"></i>
+                            <i className="bi bi-gear-wide"></i>
                             &nbsp;Settings
                         </NavLink>
                         <NavLink
