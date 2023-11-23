@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';  // Import Axios
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';  // Import Axios
 import Baner from '../Header/Header Com/Baner';
 import { Row, Container, Col } from 'react-bootstrap';
+import "../homePage/homePage.css/Home.css";
+
 import "../homePage/homePage.css/Home.css";
 
 const Home = () => {
@@ -36,6 +40,19 @@ const Home = () => {
 
     return (
         <>
+            {!isLoggedIn && <Baner />}
+            <Container className='page'>
+                <Row>
+                    <Col md={9}>
+                        <div className='flex'>
+                            {isLoggedIn && (
+                                <div
+                                    className={`your ${activeFeed === 'your' ? 'active' : ''}`}
+                                    onClick={() => handleFeedToggle('your')}
+                                >
+                                    Your Feed
+                                </div>
+                            )}
             {!isLoggedIn && <Baner />}
             <Container className='page'>
                 <Row>

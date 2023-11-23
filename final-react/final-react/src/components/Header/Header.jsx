@@ -39,6 +39,15 @@ const Header = () => {
                     >
                         conduit
                     </NavLink>
+                <Col xs={2} >
+                    <NavLink
+                        to="/home"
+                        className={` Font-color text-decoration Home ${activeLink === 'Home' ? 'active' : ''}`}
+                        onClick={() => handleNavLinkClick('Home')}
+
+                    >
+                        conduit
+                    </NavLink>
                 </Col>
                 <Col xs={4}></Col>
                 <Col xs={4} className='flex '>
@@ -86,6 +95,8 @@ const Header = () => {
                             to={'/@' + currUsername}
                             className={`text-decoration Sign-up ${activeLink === 'Signup' ? 'active' : ''}`}
                             onClick={() => handleNavLinkClick('')}
+                        >
+                            <img src="https://api.realworld.io/images/smiley-cyrus.jpeg" className='user-pic' />{currUsername}
                         >
                             <img src="https://api.realworld.io/images/smiley-cyrus.jpeg" className='user-pic' />{currUsername}
                         </NavLink>
