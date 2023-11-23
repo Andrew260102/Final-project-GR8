@@ -30,8 +30,15 @@ const Header = () => {
         <nav className='padding-header'>
             <Row fluid="true">
                 <Col xs={2}></Col>
-                <Col xs={2} className="Font-color">
-                    conduit
+                <Col xs={2} >
+                    <NavLink
+                        to="/home"
+                        className={` Font-color text-decoration Home ${activeLink === 'Home' ? 'active' : ''}`}
+                        onClick={() => handleNavLinkClick('Home')}
+
+                    >
+                        conduit
+                    </NavLink>
                 </Col>
                 <Col xs={4}></Col>
                 <Col xs={4} className='flex '>
@@ -63,23 +70,25 @@ const Header = () => {
                             className={`text-decoration Sign-in ${activeLink === 'Signin' ? 'active' : ''}`}
                             onClick={() => handleNavLinkClick('')}
                         >
-                            New Article
+                            <i className="bi bi-pencil-square"></i>
+                            &nbsp;New Article
+
                         </NavLink>
                         <NavLink
                             to="/settings"
                             className={`text-decoration Sign-up ${activeLink === 'Signup' ? 'active' : ''}`}
                             onClick={() => handleNavLinkClick('')}
                         >
-                            Settings
+                            <i className="bi bi-gear-wide"></i>
+                            &nbsp;Settings
                         </NavLink>
                         <NavLink
                             to={'/@' + currUsername}
                             className={`text-decoration Sign-up ${activeLink === 'Signup' ? 'active' : ''}`}
                             onClick={() => handleNavLinkClick('')}
-                        >      
-                            <img src="https://api.realworld.io/images/smiley-cyrus.jpeg" className='user-pic'/>{currUsername}
+                        >
+                            <img src="https://api.realworld.io/images/smiley-cyrus.jpeg" className='user-pic' />{currUsername}
                         </NavLink>
-                        {/* <button onClick={handleLogout}>logout</button> */}
                     </div>)}
 
                 </Col>

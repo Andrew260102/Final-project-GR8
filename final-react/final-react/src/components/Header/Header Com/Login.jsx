@@ -36,9 +36,15 @@ const Login = () => {
                 localStorage.setItem("currPassword", user.password);
                 localStorage.setItem("currToken", user.token);
                 localStorage.setItem("currUsername", user.username);
+                localStorage.setItem("currImage", user.image);
+                localStorage.setItem("currBio", user.bio);
                 window.location.reload();
             } else {
-                alert("Login failed");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Login fail!',
+                });
                 if (errors) {
                     console.error("Login errors:", errors);
                 }
@@ -46,7 +52,11 @@ const Login = () => {
             }
         } catch (error) {
             console.error("Error during login:", error);
-            alert("Login failed");
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Login fail!',
+            });
         }
         setEmail("");
         setPassword("");

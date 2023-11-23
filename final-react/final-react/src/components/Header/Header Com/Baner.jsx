@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 const Baner = () => {
     return (
+
+        
         <div className='banner'>
             <div className='container'>
                 <h1 className='text-h1 text-font'>conduit</h1>
